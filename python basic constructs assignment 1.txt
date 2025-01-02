@@ -1,0 +1,36 @@
+age = 25               # Integer
+height = 5.9          # Float
+name = "NITHIN"        # String
+is_student = True     # Boolean
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+for i in range(5):
+    print(i)
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("NITHIN"))
+fruits = ["apple", "banana", "cherry"]
+fruits.append("date")  # Add an item
+print(fruits)
+coordinates = (10, 20)
+print(coordinates)
+student = {
+    "name": "NITHIN",
+    "age": 25,
+    "is_student": True
+}
+print(student["name"])
+user_name = input("Enter your name: ")
+print(f"Welcome, {user_name}!")
+try:
+    num = int(input("Enter a number: "))
+    print(f"You entered: {num}")
+except ValueError:
+    print("That's not a valid number!")
