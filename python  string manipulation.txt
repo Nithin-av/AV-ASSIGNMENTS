@@ -1,0 +1,21 @@
+def string_manipulator():
+    sentence = input("Enter a sentence: ")
+
+    # Print in uppercase
+    uppercase_sentence = sentence.upper()
+    print(f"Uppercase: {uppercase_sentence}")
+
+    # Print in lowercase
+    lowercase_sentence = sentence.lower()
+    print(f"Lowercase: {lowercase_sentence}")
+
+    # Replace spaces with underscores
+    underscored_sentence = sentence.replace(" ", "_")
+    print(f"Spaces replaced with underscores: {underscored_sentence}")
+
+    # Remove leading and trailing whitespace
+    trimmed_sentence = sentence.strip()
+    print(f"Leading/trailing whitespace removed: '{trimmed_sentence}'")
+
+if __name__ == "__main__":
+    string_manipulator()
