@@ -1,0 +1,20 @@
+def character_counter():
+    """
+    Asks the user for a string and prints the number of characters
+    in the string, excluding spaces.
+    """
+    user_string = input("Please enter a string: ")
+
+    # Initialize a counter for non-space characters
+    char_count = 0
+
+    # Iterate through each character in the string
+    for char in user_string:
+        # If the character is not a space, increment the counter
+        if char != ' ':
+            char_count += 1
+
+    print(f"There are {char_count} characters in the string (excluding spaces).")
+
+if __name__ == "__main__":
+    character_counter()                
