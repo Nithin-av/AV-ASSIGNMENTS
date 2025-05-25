@@ -1,0 +1,63 @@
+class BankAccount:
+    def __init__(self, account_holder, initial_balance=0.0):
+        """
+        Initializes a new bank account.
+        :param account_holder: Name of the account holder.
+        :param initial_balance: Starting balance (default is 0.0).
+        """
+        self.account_holder = account_holder
+        if initial_balance >= 0:
+            self.__balance = initial_balance  # Private attribute
+        else:
+            self.__balance = 0.0
+            print("Initial balance cannot be negative. Setting to 0.")
+
+    def deposit(self, amount):
+        """Deposits money into the account."""
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited ${amount:.2f}. New balance: ${self.__balance:.2f}")
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdraw(self, amount):
+        """Withdraws money from the account."""
+        if amount <= 0:
+            print("Withdrawal amount must be positive.")
+        elif amount > self.__balance:
+            print("Insufficient funds.")
+        else:
+            self.__balance -= amount
+            print(f"Withdrew ${amount:.2f}. New balance: ${self.__balance:.2f}")
+
+    def get_balance(self):
+        """Returns the current balance."""
+        return self.__balance
+
+    def __str__(self):
+        """String representation of the BankAccount object."""
+        return f"Account Holder: {self.account_holder}, Balance: ${self.__balance:.2f}"
+
+# --- Main part of the script to demonstrate the BankAccount class ---
+def main_bank_account():
+    print("--- Bank Account Management ---")
+
+    # Create an account
+    account1 = BankAccount("Nithin", 1000.00)
+    print(account1)
+
+    # Perform some transactions
+    account1.deposit(250.50)
+    account1.withdraw(500.00)
+    account1.withdraw(800.00) # Insufficient funds
+    account1.deposit(100.00)
+
+    print(f"Current balance for {account1.account_holder}: ${account1.get_balance():.2f}")
+
+    account2 = BankAccount("Bob Johnson")
+    print(account2)
+    account2.deposit(50.00)
+    account2.withdraw(20.00)
+
+if __name__ == "__main__":
+    main_bank_account()
